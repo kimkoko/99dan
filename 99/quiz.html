@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>multiplication tables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Test Yourself!</h1>
+        </div>
+        <div class="board">
+            <input type="text" id="numbers" class="num">
+        </div>
+        <div id="typeans" class="typeanswer">
+            <div class="answer">
+                <h2>Enter your answer:</h2>
+                <input type="text" id="quizans" class="quizanswer">
+            </div>
+            <div class="button">
+                <button class="btn" onclick="check()">check</button>
+            </div>
+        </div>
+        <div id ="opt" class="options">
+            <a href="quiz.html"><h3>One More Time</h3></a>
+            <a href="index.html"><h3>Menu</h3></a>
+        </div>    
+    </div>
+    <div class="footer">
+        <img src="menu.png" class="icon1">
+        <a href="index.html"><img src="home.png" class="icon2"></a>
+        <img src="arrow.png" class="icon3">
+    </div>
+    </div>
+    <script>
+        var typing = document.getElementById("typeans");
+        var opts = document.getElementById("opt");
+        opts.style.display = "none";
+
+        var n1 = Math.floor(Math.random()*10 + 1);
+        var n2 = Math.floor(Math.random()*10 + 1);
+        var n3 =  String(n1) + " X " + String(n2) + " = ? ";
+        document.getElementById("numbers").value = n3;
+
+        var ans = n1 * n2;
+        function check() {
+            typing.style.display = "none";
+            opts.style.display = "block";
+            var input = document.getElementById("quizans").value;
+            if ( ans == input) {
+                document.getElementById("numbers").value = "Correct!";
+            } else {
+                document.getElementById("numbers").value = "Wrong :(";
+            }
+
+        }
+    </script>
+</body>
+</html>
