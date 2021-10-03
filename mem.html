@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>multiplication tables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class ="header">
+        <h1>Study & Memorize</h1>
+    </div>
+
+    <div class="askboard" id="ask">
+        <h2>Which<br>multiplication table<br>do you want to<br>learn?</h2>
+    </div>
+    <div id="choosenum" class="typeanswer">
+        <div class="choose">
+            <h2>Enter the number (1-9):</h2>
+            <input type="text" id="chooseno" class="quizanswer">
+        </div>
+        <div class="button">
+            <button class="btn" onclick="enter()">Enter</button>
+        </div>
+    </div>
+    <div class="tables" id="tabless">
+        <input type="text" id="whichtable" class="tableno">
+        <div class = "innerbox">
+            <input type="text" id="1t" class="table1">
+            <input type="text" id="2t" class="table2">
+            <input type="text" id="3t" class="table3">
+            <input type="text" id="4t" class="table4">
+            <input type="text" id="5t" class="table5">
+            <input type="text" id="6t" class="table6">
+            <input type="text" id="7t" class="table7">
+            <input type="text" id="8t" class="table8">
+            <input type="text" id="9t" class="table9">
+        </div>
+        <div class="again">
+            <a href="mem.html"><h3>Again</h3></a>
+            <a href="index.html"><h3>Menu</h3></a>
+        </div> 
+    </div>
+    
+    <div class="footer">
+        <img src="menu.png" class="icon1">
+        <a href="index.html"><img src="home.png" class="icon2"></a>
+        <img src="arrow.png" class="icon3">
+    </div>
+
+    <script>
+        var cont1 = document.getElementById("tabless");
+        var cont2 = document.getElementById("ask");
+        var cont3 = document.getElementById("choosenum");
+        cont1.style.display = "none";
+
+        function enter() {
+            var chosen = document.getElementById("chooseno").value;
+            if (chosen <= 9 && chosen >= 1) {
+                cont1.style.display = "block";
+                cont2.style.display = "none";
+                cont3.style.display = "none";
+                var sent = String(chosen) + " times table";
+                document.getElementById("whichtable").value = sent;
+                var id = 1;
+                var row = String(chosen) + "  X  1  =  " + String(id*chosen);
+                document.getElementById("1t").value = row;
+                id++;
+                row = String(chosen) + "  X  2  =  " + String(id*chosen);
+                document.getElementById("2t").value = row;
+                id++;
+                row = String(chosen) + "  X  3  =  " + String(id*chosen);
+                document.getElementById("3t").value = row;
+                id++;
+                row = String(chosen) + "  X  4  =  " + String(id*chosen);
+                document.getElementById("4t").value = row;
+                id++;
+                row = String(chosen) + "  X  5  =  " + String(id*chosen);
+                document.getElementById("5t").value = row;
+                id++;
+                row = String(chosen) + "  X  6  =  " + String(id*chosen);
+                document.getElementById("6t").value = row;
+                id++;
+                row = String(chosen) + "  X  7  =  " + String(id*chosen);
+                document.getElementById("7t").value = row;
+                id++;
+                row = String(chosen) + "  X  8  =  " + String(id*chosen);
+                document.getElementById("8t").value = row;
+                id++;
+                row = String(chosen) + "  X  9  =  " + String(id*chosen);
+                document.getElementById("9t").value = row;
+
+            } else {
+                document.getElementById("chooseno").value = "Try Again";
+            }           
+        }
+    </script>
+</body>
+</html>
